@@ -1,0 +1,67 @@
+# render 1280x720
+cmd Wiz.Map Practice
+expect Wiz: map is Practice
+cmd Wiz.Waves 0
+expect Wiz: waves are off
+cmd Wiz.God 1
+expect Wiz: god mode is on
+cmd Wiz.Shrine 1
+expect Wiz: the shrine is closed (the wizard is out of its circle)
+cmd Input.Press W 0.5
+wait 1.0
+cmd Input.Press E 0.1
+wait 0.5
+cmd Wiz.State
+expect "shrine":true}
+cmd Wiz.AddSkeletons 4
+expect Wiz: added 4 of 4 skeletons
+cmd Wiz.ThrowSpear 600 0
+expect Wiz: spear not thrown
+cmd Wiz.State
+expect "army":4,
+cmd Wiz.Summon
+expect Wiz: summoned 0 skeletons
+cmd Wiz.Buy Sword
+expect Wiz: unknown item
+cmd Wiz.Buy Spear
+expect Wiz: bought 0 Spear for 0 bones
+cmd Wiz.AddBones 40
+expect Wiz: dropped 40 bones
+wait 0.5
+shot shrine_menu
+cmd Wiz.Buy Spear
+expect Wiz: bought 1 Spear for 12 bones (bones 28, army 4, research 1, spear unlocked)
+cmd Wiz.Buy Guard Max
+expect Wiz: bought 3 Guard for 24 bones (bones 4, army 7,
+cmd Wiz.AddBones 21
+expect Wiz: dropped 21 bones
+wait 0.5
+cmd Wiz.Buy Armor 5
+expect Wiz: bought 1 Armor for 15 bones (bones 10, army 7, research 2,
+cmd Wiz.Buy Armor
+expect Wiz: bought 0 Armor for 0 bones
+cmd Wiz.State
+expect "spearUnlocked":true,"research":2,
+cmd Wiz.State
+expect "timeScale":0.50,
+shot shrine_menu_bought
+cmd Input.Press E 0.1
+wait 0.5
+cmd Wiz.State
+expect "shrine":false}
+cmd Wiz.Shrine 1
+expect Wiz: the shrine is open (the wizard is in its circle)
+cmd Input.Press S 1.5
+wait 2.0
+cmd Wiz.State
+expect "shrine":false}
+cmd Wiz.ThrowSpear 600 0
+expect Wiz: spear thrown
+cmd Wiz.AddSkeletons 2 Guard
+expect Wiz: added 2 of 2 guards
+cmd Wiz.SpawnEnemies 1 Brute
+expect Wiz: spawned 1 of 1 brutes
+cmd Wiz.Pause 1
+expect Wiz: the game is paused
+cmd Wiz.Pause 0
+expect Wiz: the game is running

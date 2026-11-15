@@ -1,0 +1,23 @@
+# render 1280x720
+cmd Wiz.Map Practice
+expect Wiz: map is Practice
+cmd Wiz.Waves 0
+expect Wiz: waves are off
+cmd Wiz.God 1
+expect Wiz: god mode is on
+cmd Wiz.AddSkeletons 12
+expect Wiz: added 12 of 12 skeletons
+cmd Wiz.SpawnEnemies 40
+expect Wiz: spawned 40 of 40 grunts
+wait 5
+shot angled
+cmd Wiz.Camera TopDown
+expect Wiz: camera is Top Down
+wait 1
+shot topdown
+cmd Wiz.Camera ThirdPerson
+expect Wiz: camera is Third Person
+wait 1
+shot thirdperson
+cmd Wiz.State
+expect Wiz: {"army":

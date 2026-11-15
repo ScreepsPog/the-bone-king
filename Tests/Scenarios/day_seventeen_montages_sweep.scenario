@@ -1,0 +1,43 @@
+# render 1280x720
+# The montages, weapons in their sockets, the brute's sweep (direction of 2026-11-15 00:20 PST).
+cmd Wiz.Waves 0
+expect Wiz: waves are off
+cmd Wiz.God 1
+expect Wiz: god mode is on
+cmd Wiz.Debug 0
+cmd Wiz.Camera ThirdPerson
+cmd Wiz.AddSkeletons 4
+wait 1
+cmd Wiz.Weapons
+expect Skeleton:SM_Steel_Sword@Sword_Socket
+cmd Wiz.Weapons
+expect Grunt:SM_Iron_Longsword@Sword_Socket
+cmd Wiz.Weapons
+expect Assassin:SM_Dagger@Dagger_Socket
+cmd Wiz.Weapons
+expect Brute:SM_Steel_Hammer@Weapon_Socket
+cmd Wiz.Weapons
+expect Commander:SM_Commander_Spear@Commander_Spear_Socket
+cmd Wiz.State
+expectnum 78 78 "swingsReady":
+cmd Wiz.Tune BruteHealth 5000
+cmd Wiz.Tune SkeletonHealth 5000
+cmd Wiz.SpawnEnemies 1 Brute 330 0
+wait 3.2
+shot brute_after_slam
+wait 1.0
+shot brute_sweep_a
+wait 0.4
+shot brute_sweep_b
+wait 3
+cmd Wiz.State
+expectnum 1 9 "slams":
+cmd Wiz.State
+expectnum 1 99 "sweeps":
+cmd Wiz.Tune CommanderSpearWindup 1.5
+cmd Wiz.Tune CommanderHealth 9000
+cmd Wiz.SpawnEnemies 1 Commander 700 250
+wait 1.0
+shot commander_a
+wait 0.6
+shot commander_b

@@ -1,0 +1,22 @@
+# render 1280x720
+cmd Wiz.Waves 0
+expect Wiz: waves are off
+cmd Wiz.Debug 0
+cmd Wiz.State
+expect "outside":false
+cmd Wiz.Goto -900 600
+expect Wiz: wizard is at
+wait 1.5
+cmd Wiz.State
+expect "outside":true
+shot battlefield_warning
+cmd Wiz.Goto 300 600
+wait 0.5
+cmd Wiz.State
+expect "outside":false
+cmd Wiz.Tune BattlefieldWarnSeconds 1
+cmd Wiz.Goto -900 600
+wait 2.2
+cmd Wiz.State
+expect "leftField":true
+shot battlefield_failed

@@ -1,0 +1,62 @@
+# render 1280x720
+# Music, sound effects, deaths by where the blow came from, the chosen attacks, the stun (direction of 2026-11-14 22:30 PST).
+cmd Wiz.Waves 0
+expect Wiz: waves are off
+cmd Wiz.God 1
+expect Wiz: god mode is on
+cmd Wiz.Debug 0
+cmd Wiz.State
+expect "music":"game"
+cmd Wiz.State
+expectnum 78 78 "swingsReady":
+cmd Wiz.Ground 0 0
+expect (grid loaded)
+cmd Wiz.Music
+expect Wiz: music is game
+cmd Wiz.Tune GruntHealth 60
+cmd Wiz.AddSkeletons 12
+expect Wiz: added 12 of 12 skeletons
+cmd Wiz.SpawnEnemies 8 Grunt 450 0
+expect Wiz: spawned 8 of 8 grunts
+wait 2.5
+shot fight_swords
+wait 5.5
+shot fight_bodies
+cmd Wiz.State
+expectnum 1 99 "deaths":
+cmd Wiz.State
+expectnum 1 99 "bodyFalls":
+cmd Wiz.State
+expectnum 3 9999 "cues":
+cmd Wiz.Sound
+expectnum 1 999 "swordhitsenemy":
+cmd Wiz.Blink 0 1
+wait 0.3
+cmd Wiz.Summon
+cmd Input.Press LeftMouseButton 1.2
+wait 1.6
+cmd Wiz.Sound
+expectnum 1 9 "blink":
+cmd Wiz.Sound
+expectnum 1 99 "firethrow":
+cmd Wiz.Sound denied
+cmd Wiz.Sound
+expectnum 1 99 "denied":
+cmd Wiz.SpawnEnemies 1 Brute 500 300
+wait 4
+shot brute_attack
+cmd Wiz.Tune CommanderSpearWindup 1.2
+cmd Wiz.SpawnEnemies 1 Commander 900 -300
+wait 1.6
+shot commander_attack
+cmd Wiz.Goto 0 0
+cmd Wiz.God 0
+cmd Wiz.Tune GruntHealth 5000
+cmd Wiz.Overwhelm 40 0.2 2
+cmd Wiz.SpawnEnemies 2 Grunt 110 40
+wait 1.2
+shot wizard_stunned
+cmd Wiz.State
+expect "falling":true
+cmd Wiz.State
+expectnum 0.9 1 "fallShown":

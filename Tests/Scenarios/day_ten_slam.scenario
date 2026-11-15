@@ -1,0 +1,34 @@
+# render 1280x720
+cmd Wiz.Map Practice
+expect Wiz: map is Practice
+cmd Wiz.Waves 0
+expect Wiz: waves are off
+cmd Wiz.God 1
+expect Wiz: god mode is on
+wait 1
+cmd Wiz.AddSkeletons 6
+expect Wiz: added 6 of 6 skeletons
+cmd Wiz.Tune BruteSlamGrow 3
+expect Wiz: tuning BruteSlamGrow is 3
+cmd Wiz.Tune BruteSlamHold 4
+expect Wiz: tuning BruteSlamHold is 4
+cmd Wiz.Tune SlamFlashSeconds 1.5
+expect Wiz: tuning SlamFlashSeconds is 1.5
+cmd Wiz.Tune BruteHealth 5000
+expect Wiz: tuning BruteHealth is 5000
+cmd Wiz.SpawnEnemies 1 Brute 450 0
+expect Wiz: spawned 1 of 1 brutes
+cmd Wiz.State
+expect "slams":0,
+wait 2.5
+cmd Wiz.State
+expect "slamming":1,
+shot slam_grows
+wait 2.4
+cmd Wiz.State
+expect "slamming":1,
+shot slam_full
+wait 4
+cmd Wiz.State
+expectnum 1 3 "slams":
+shot slam_lands

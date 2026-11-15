@@ -1,0 +1,25 @@
+# render 1280x720
+# The Bolt is a ball of fire; the enemy's warnings and the spear's mark are glowing marks on the ground
+# (direction of 2026-11-15 01:50 PST).
+cmd Wiz.Waves 0
+expect Wiz: waves are off
+cmd Wiz.God 1
+expect Wiz: god mode is on
+cmd Wiz.Debug 0
+wait 1
+cmd Wiz.Effects
+expect Bolt:M_FireBolt/Sphere
+cmd Wiz.Effects
+expect Slam:M_GroundMark/Plane
+cmd Wiz.Effects
+expect SlamFull:M_GroundMark/Plane
+cmd Wiz.Effects
+expect SlamFlash:M_GroundMark/Plane
+cmd Wiz.Effects
+expect Lane:M_GroundMark/Plane
+cmd Wiz.Effects
+expect LaneLocked:M_GroundMark/Plane
+cmd Wiz.Effects
+expect SpearBlast:M_GroundMark/Plane
+cmd Wiz.Effects
+expect Sweep:M_GroundMark/Plane

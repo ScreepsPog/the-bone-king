@@ -1,0 +1,23 @@
+# render 1280x720
+cmd Wiz.Waves 0
+expect Wiz: waves are off
+cmd Wiz.God 1
+expect Wiz: god mode is on
+wait 1
+cmd Wiz.State
+expect "map":"Outskirts",
+cmd Wiz.State
+expect "houseBoxes":true,
+cmd Wiz.State
+expect "buildings":633,
+cmd Wiz.State
+expect "placedPieces":57,
+shot level_boxes
+cmd Wiz.HouseBoxes 0
+expect Wiz: house boxes are off (633 placed buildings)
+cmd Wiz.State
+expect "houseBoxes":false,
+wait 0.5
+shot level_no_boxes
+cmd Wiz.HouseBoxes 1
+expect Wiz: house boxes are on (633 placed buildings)

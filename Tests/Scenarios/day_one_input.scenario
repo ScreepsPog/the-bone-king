@@ -1,0 +1,38 @@
+# render 1280x720
+cmd Wiz.Map Practice
+expect Wiz: map is Practice
+cmd Wiz.Waves 0
+expect Wiz: waves are off
+cmd Wiz.God 1
+expect Wiz: god mode is on
+wait 1
+cmd Wiz.State
+expect "bolts":0,
+cmd Input.Press W 1.0
+wait 1.5
+cmd Wiz.State
+expectnum 300 700 "x":
+cmd Input.Press D 1.0
+wait 1.5
+cmd Wiz.State
+expectnum 300 700 "y":
+cmd Input.Press LeftMouseButton 0.7
+wait 1.2
+cmd Wiz.State
+expectnum 2 2 "bolts":
+cmd Input.Press Two
+wait 0.6
+cmd Wiz.Camera
+expect Wiz: camera is Top Down
+cmd Input.Press Three
+wait 0.6
+cmd Wiz.Camera
+expect Wiz: camera is Third Person
+cmd Input.Press One
+wait 0.6
+cmd Wiz.Camera
+expect Wiz: camera is Angled
+cmd Input.Press H
+wait 0.3
+cmd Wiz.Debug
+expect Wiz: debug overlay is on

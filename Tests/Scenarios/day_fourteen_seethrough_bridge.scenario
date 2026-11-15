@@ -1,0 +1,16 @@
+# render 1280x720
+cmd Wiz.Waves 0
+expect Wiz: waves are off
+cmd Wiz.God 1
+expect Wiz: god mode is on
+cmd Wiz.Debug 0
+cmd Wiz.SeeThrough 0.22 0.3 0.25
+wait 1.5
+shot seethrough_house
+cmd Wiz.AddSkeletons 10
+cmd Wiz.Goto 1725 -2300
+wait 2.5
+shot units_on_bridge
+cmd Wiz.Goto -900 600
+wait 1.5
+shot battlefield_warning

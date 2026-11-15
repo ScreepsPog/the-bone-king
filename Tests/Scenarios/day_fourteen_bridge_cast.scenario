@@ -1,0 +1,30 @@
+# render 1280x720
+cmd Wiz.Waves 0
+expect Wiz: waves are off
+cmd Wiz.God 1
+expect Wiz: god mode is on
+cmd Wiz.Debug 0
+cmd Wiz.Goto 1725 -1500
+expect Wiz: wizard is at
+wait 2
+shot bridge_from_bank
+cmd Wiz.Goto 1725 -2280
+wait 1
+shot bridge_on_it
+cmd Wiz.Camera TopDown
+wait 1
+shot bridge_top_down
+cmd Wiz.Camera Angled
+cmd Wiz.Goto 0 0
+cmd Wiz.SpawnEnemies 1 Brute 260 -60
+cmd Input.Press LeftMouseButton 2.0
+wait 0.2
+shot cast_at_fire
+wait 0.25
+shot cast_follow_through
+wait 2.0
+shot brute_hammer
+cmd Wiz.Tune CommanderSpearWindup 0.4
+cmd Wiz.SpawnEnemies 1 Commander 900 0
+wait 1.15
+shot commander_spear

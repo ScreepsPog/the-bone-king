@@ -1,0 +1,35 @@
+# render 1280x720
+cmd Wiz.Map Practice
+expect Wiz: map is Practice
+cmd Wiz.Waves 0
+expect Wiz: waves are off
+cmd Wiz.God 1
+expect Wiz: god mode is on
+wait 1
+cmd Wiz.AddSkeletons 14
+expect Wiz: added 14 of 14 skeletons
+cmd Wiz.Command 14 Any 1500 0
+expect Wiz: sent 14 to
+wait 6
+cmd Wiz.State
+expect "sent":14,
+cmd Wiz.State
+expect "hunting":0,"armyValue":14,"boneWorth":14,"boltInterval":0.45
+shot orders_spread
+cmd Wiz.SpawnEnemies 1 Archer 1500 650
+expect Wiz: spawned 1 of 1 archers
+wait 2.5
+cmd Wiz.State
+expectnum 1 14 "hunting":
+shot orders_hunt
+wait 14
+cmd Wiz.State
+expectnum 1 1 "killed":
+cmd Wiz.State
+expect "hunting":0,
+cmd Wiz.AddSkeletons 4
+cmd Input.Press F 0.1
+wait 0.4
+shot orders_cursor
+cmd Wiz.State
+expect "commandMode":true,"commandCount":2,

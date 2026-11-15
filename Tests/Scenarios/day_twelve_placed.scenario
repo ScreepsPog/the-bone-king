@@ -1,0 +1,19 @@
+# render 1280x720
+cmd Wiz.Waves 0
+expect Wiz: waves are off
+cmd Wiz.God 1
+expect Wiz: god mode is on
+wait 1
+cmd Wiz.State
+expect "placedPosts":16,
+cmd Wiz.State
+expect "placedPieces":57,
+cmd Wiz.State
+expect "buildings":633,
+cmd Wiz.State
+expectnum 150 260 "enemies":
+shot placed_start
+cmd Wiz.Goto shrine
+expect Wiz: wizard is at
+wait 1.5
+shot placed_shrine

@@ -1,0 +1,41 @@
+# render 1280x720
+cmd Wiz.Map Practice
+expect Wiz: map is Practice
+cmd Wiz.Waves 0
+expect Wiz: waves are off
+cmd Wiz.God 1
+expect Wiz: god mode is on
+cmd Wiz.Obstacles 0
+expect Wiz: obstacles are off
+cmd Wiz.ThrowSpear 600 0
+expect Wiz: spear not thrown (locked, needs 1 skeletons
+cmd Wiz.UnlockSpear 1
+expect Wiz: the spear is unlocked
+cmd Wiz.ThrowSpear 600 0
+expect Wiz: spear not thrown (unlocked, needs 1 skeletons
+cmd Wiz.AddSkeletons 12
+expect Wiz: added 12 of 12 skeletons
+cmd Wiz.Tune GruntSpeed 0
+expect Wiz: tuning GruntSpeed is 0
+cmd Wiz.Tune BruteSpeed 0
+expect Wiz: tuning BruteSpeed is 0
+cmd Wiz.SpawnEnemies 30
+expect Wiz: spawned 30 of 30 grunts
+cmd Wiz.SpawnEnemies 4 Brute
+expect Wiz: spawned 4 of 4 brutes, 34 enemies now
+cmd Wiz.SpawnEnemies 1 Dragon
+expect Wiz: unknown kind
+cmd Wiz.Tune BlastSeconds 3
+expect Wiz: tuning BlastSeconds is 3
+cmd Wiz.ThrowSpear 500 0
+expect Wiz: spear thrown at 500, 0 (army 11 now)
+cmd Wiz.ThrowSpear 500 0
+expect Wiz: spear not thrown
+wait 1.5
+shot spear_blast
+wait 0.5
+cmd Wiz.ThrowSpear 0 700
+expect Wiz: spear thrown at 0, 700 (army 10 now)
+wait 2
+cmd Wiz.State
+expect "spears":2,

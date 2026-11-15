@@ -1,0 +1,37 @@
+# render 1280x720
+cmd Wiz.Map Practice
+expect Wiz: map is Practice
+cmd Wiz.Waves 0
+expect Wiz: waves are off
+cmd Wiz.God 1
+expect Wiz: god mode is on
+wait 1
+cmd Wiz.AddSkeletons 12
+expect Wiz: added 12 of 12 skeletons
+wait 2
+cmd Wiz.State
+expect "armyModel":true,"armyModels":12
+shot army_models
+cmd Wiz.ArmyModel 0
+expect Wiz: army model is off
+wait 0.3
+cmd Wiz.State
+expect "armyModel":false,"armyModels":0
+cmd Wiz.ArmyModel 1
+expect Wiz: army model is on
+cmd Wiz.Tune BoneLife 2
+expect Wiz: tuning BoneLife is 2
+cmd Wiz.SpawnEnemies 2 Grunt 420 0
+expect Wiz: spawned 2 of 2 grunts
+wait 8
+cmd Wiz.State
+expectnum 2 2 "killed":
+cmd Wiz.State
+expectnum 1 2 "bonesInView":
+cmd Wiz.State
+expect "away":0,
+cmd Wiz.Command 6 Any 1500 0
+wait 5
+cmd Wiz.State
+expect "away":6,
+shot army_walk

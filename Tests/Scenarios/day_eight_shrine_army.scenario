@@ -1,0 +1,42 @@
+# render 1280x720
+cmd Wiz.Map Practice
+expect Wiz: map is Practice
+cmd Wiz.Waves 0
+expect Wiz: waves are off
+cmd Wiz.God 1
+expect Wiz: god mode is on
+wait 1
+cmd Wiz.State
+expect "seeThrough":0.13,"seeThroughReady":true
+cmd Wiz.SeeThrough 0
+expect Wiz: see-through radius is 0.00
+shot wall_whole
+cmd Wiz.SeeThrough 0.13 0.4 0.19
+expect Wiz: see-through radius is 0.13 (material ready)
+wait 0.3
+shot wall_cut
+cmd Wiz.SeeThrough 0.13 -1 -1
+cmd Wiz.AddSkeletons 20
+expect Wiz: added 20 of 20 skeletons
+cmd Wiz.AddBones 4
+wait 0.5
+cmd Wiz.State
+expect "bones":4,
+cmd Input.Press W 0.5
+wait 1.0
+cmd Input.Press E 0.1
+wait 0.5
+cmd Wiz.State
+expect "shrine":true}
+shot shrine_army_pays
+cmd Wiz.Buy Armor
+expect Wiz: bought 1 Armor
+cmd Wiz.State
+expect "army":9,
+cmd Wiz.State
+expect "bones":0,
+cmd Wiz.State
+expect "sacrificed":11,
+cmd Wiz.State
+expect "bonesOnGround":0,
+shot sizes_new

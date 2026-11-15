@@ -1,0 +1,40 @@
+# render 1280x720
+cmd Wiz.Map Practice
+expect Wiz: map is Practice
+cmd Wiz.Waves 0
+expect Wiz: waves are off
+cmd Wiz.God 1
+expect Wiz: god mode is on
+wait 1
+cmd Wiz.State
+expect "model":"SKM_Wizard_King","modelMoving":false,"modelHeight":220,
+shot model_idle
+cmd Input.Press W 2.0
+wait 1.0
+cmd Wiz.State
+expect "modelMoving":true,
+shot model_walk
+wait 2.0
+cmd Wiz.State
+expect "modelMoving":false,
+cmd Wiz.Camera ThirdPerson
+wait 1.0
+shot model_close
+cmd Input.Press S 1.5
+wait 0.8
+shot model_close_back
+wait 1.5
+cmd Wiz.ModelHeight 300
+expect Wiz: model height is 300
+cmd Wiz.ModelHeight
+expect Wiz: model height is 300
+cmd Wiz.ModelHeight 220
+expect Wiz: model height is 220
+cmd Wiz.Model 0
+expect Wiz: model is off
+cmd Wiz.State
+expect "model":"shapes",
+cmd Wiz.Model 1
+expect Wiz: model is on
+cmd Wiz.State
+expect "model":"SKM_Wizard_King",

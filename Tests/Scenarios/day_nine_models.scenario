@@ -1,0 +1,40 @@
+# render 1280x720
+cmd Wiz.Map Practice
+expect Wiz: map is Practice
+cmd Wiz.Waves 0
+expect Wiz: waves are off
+cmd Wiz.God 1
+expect Wiz: god mode is on
+wait 1
+cmd Wiz.AddSkeletons 6
+expect Wiz: added 6 of 6 skeletons
+cmd Wiz.AddSkeletons 3 Guard
+expect Wiz: added 3 of 3 guards
+cmd Wiz.SpawnEnemies 6 Grunt 500 0
+expect Wiz: spawned 6 of 6 grunts
+cmd Wiz.SpawnEnemies 1 Brute 500 200
+expect Wiz: spawned 1 of 1 brutes
+cmd Wiz.SpawnEnemies 1 Assassin 350 -250
+expect Wiz: spawned 1 of 1 assassins
+cmd Wiz.SpawnEnemies 1 Archer 600 -300
+expect Wiz: spawned 1 of 1 archers
+cmd Wiz.Camera ThirdPerson
+wait 0.8
+cmd Wiz.State
+expectnum 12 18 "armyModels":
+cmd Wiz.State
+expectnum 78 78 "swingsReady":
+wait 1.4
+shot models_fight
+cmd Wiz.Camera Angled
+cmd Wiz.AddBones 30
+wait 0.5
+cmd Wiz.Buy Spear
+expect Wiz: bought 1 Spear
+cmd Wiz.State
+expectnum 18 30 "bones":
+cmd Wiz.ThrowSpear 600 0
+expect Wiz: spear thrown
+cmd Wiz.State
+expectnum 15 27 "bones":
+shot models_top

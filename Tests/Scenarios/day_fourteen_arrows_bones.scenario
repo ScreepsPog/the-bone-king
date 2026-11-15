@@ -1,0 +1,21 @@
+# render 1280x720
+cmd Wiz.Waves 0
+expect Wiz: waves are off
+cmd Wiz.God 1
+expect Wiz: god mode is on
+cmd Wiz.Debug 0
+cmd Wiz.UnlockSpear
+cmd Wiz.AddSkeletons 8
+expect Wiz: added 8 of 8 skeletons
+cmd Wiz.AddSkeletons 4 Marksman
+expect Wiz: added 4 of 4 marksmen
+cmd Wiz.SpawnEnemies 4 Archer 700 100
+cmd Wiz.SpawnEnemies 8 Grunt 450 -100
+wait 2.2
+cmd Wiz.ThrowSpear
+wait 0.15
+shot arrows_and_spear
+wait 4
+cmd Wiz.State
+expectnum 1 200 "bonesOnGround":
+shot bone_piles

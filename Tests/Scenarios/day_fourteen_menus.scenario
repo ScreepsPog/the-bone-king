@@ -1,0 +1,41 @@
+# render 1280x720
+cmd Wiz.Waves 0
+expect Wiz: waves are off
+cmd Wiz.God 1
+expect Wiz: god mode is on
+cmd Wiz.State
+expect "menu":"none"
+cmd Wiz.StartMenu 1
+expect Wiz: the start menu is start
+cmd Wiz.State
+expect "menu":"start"
+wait 0.5
+shot menu_start
+cmd Wiz.StartMenu controls
+expect Wiz: the start menu is start
+cmd Wiz.Settings
+expect "screen":"controls"
+wait 0.5
+shot menu_controls
+cmd Wiz.Settings 0
+expect "screen":"closed"
+cmd Wiz.StartMenu 0
+expect Wiz: the start menu is none
+cmd Wiz.Pause 1
+expect Wiz: the game is paused
+wait 0.5
+shot menu_pause
+cmd Wiz.Pause 0
+expect Wiz: the game is running
+cmd Wiz.AddSkeletons 12
+expect Wiz: added 12 of 12 skeletons
+cmd Wiz.AddBones 16
+cmd Wiz.Goto shrine
+wait 1
+cmd Wiz.Shrine 1
+expect Wiz: the shrine is open (the wizard is in its circle)
+wait 0.5
+shot menu_shrine
+cmd Wiz.Buy Armor
+wait 0.5
+shot menu_shrine_army_pays

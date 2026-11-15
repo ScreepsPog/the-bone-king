@@ -1,0 +1,12 @@
+/Binaries/
+/Intermediate/
+/Saved/
+/Saved_Tests*/
+/DerivedDataCache/
+/Build/
+.vs/
+*.sln
+*.slnx
+/Plugins/*/Binaries/
+/Plugins/*/Intermediate/
+.superpowers/

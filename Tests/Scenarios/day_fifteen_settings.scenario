@@ -1,0 +1,107 @@
+# render 1280x720
+cmd Wiz.Waves 0
+expect Wiz: waves are off
+cmd Wiz.God 1
+expect Wiz: god mode is on
+cmd Wiz.Debug 0
+cmd Wiz.Settings
+expect "screen":"closed","quality":2,"renderScale":100,"hudSize":100,"edges":100,"frameRate":0,"graphicsApplied":false,"paused":false
+cmd Wiz.Settings 1
+expect "screen":"display"
+cmd Wiz.Settings
+expect "paused":true
+wait 0.5
+shot settings_display
+cmd Wiz.Settings sound
+expect "screen":"sound"
+wait 0.5
+shot settings_sound
+cmd Wiz.Settings controls
+expect "screen":"controls"
+wait 0.5
+shot settings_controls
+cmd Wiz.Settings 0
+expect "screen":"closed"
+cmd Wiz.Settings
+expect "paused":true
+cmd Wiz.Settings 1
+expect "screen":"controls"
+cmd Wiz.Setting framerate 1
+expect "frameRate":1
+cmd Wiz.Setting edges 35
+expect "edges":35
+cmd Wiz.Setting hudsize 127
+expect "hudSize":125
+cmd Wiz.Setting renderscale 70
+expect "renderScale":70,"hudSize":125,"edges":35,"frameRate":1,"graphicsApplied":true
+cmd Wiz.Settings display
+wait 0.5
+shot settings_display_changed
+cmd Wiz.Pause 0
+expect Wiz: the game is running
+cmd Wiz.Settings
+expect "screen":"closed"
+wait 0.5
+shot settings_hud_large
+cmd Wiz.Setting reset
+expect "quality":2,"renderScale":100,"hudSize":100,"edges":100,"frameRate":0
+cmd Wiz.StartMenu 1
+expect Wiz: the start menu is start
+cmd Wiz.Settings 1
+expect "screen":"controls"
+wait 0.5
+shot settings_from_start
+cmd Wiz.Settings 0
+cmd Wiz.StartMenu 0
+expect Wiz: the start menu is none
+cmd Wiz.Pause 1
+expect Wiz: the game is paused
+cmd Wiz.Settings sound
+expect "channelsReady":true
+cmd Wiz.Settings
+expect "master":80,"music":60,"effects":90,"interface":70,"muted":"0000"
+cmd Wiz.Setting music 33
+expect "music":35
+cmd Wiz.Setting mute effects 1
+expect "muted":"0010","loudness":"0.80 0.35 0.00 0.70"
+cmd Wiz.Setting background 0
+expect "backgroundMute":0
+cmd Wiz.Setting testsound
+expect "testSounds":1
+wait 0.5
+shot settings_sound_changed
+cmd Wiz.Setting resetsound
+expect "master":80,"music":60,"effects":90,"interface":70,"muted":"0000","loudness":"0.80 0.60 0.90 0.70","backgroundMute":1
+cmd Wiz.Settings controls
+cmd Wiz.Key Blink LeftShift
+expect Wiz: key set; "Blink is now on Shift."
+cmd Wiz.Key Summon F
+expect Wiz: key swapped; "F was on Command the army. Command the army moved to Q."
+cmd Wiz.Key Blink R
+expect Wiz: key refused; "R is kept for Restart the run."
+cmd Wiz.Keys
+expect Blink=LeftShift
+cmd Wiz.Key capture Bolt
+expect Wiz: key waiting
+wait 0.5
+shot settings_controls_waiting
+cmd Wiz.Key capture none
+wait 0.3
+shot settings_controls_changed
+cmd Wiz.Pause 0
+expect Wiz: the game is running
+wait 0.5
+cmd Wiz.State
+expect "blinks":0
+cmd Input.Press W 1.2
+cmd Input.Press LeftShift 0.2
+wait 1.5
+cmd Wiz.State
+expect "blinks":1
+cmd Wiz.Keys
+expect Blink=LeftShift
+shot keys_on_hud
+cmd Wiz.Key reset
+expect Wiz: key reset
+cmd Wiz.Keys
+expect Blink=SpaceBar

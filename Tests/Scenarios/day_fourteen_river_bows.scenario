@@ -1,0 +1,19 @@
+# render 1280x720
+cmd Wiz.Waves 0
+expect Wiz: waves are off
+cmd Wiz.God 1
+expect Wiz: god mode is on
+cmd Wiz.Debug 0
+cmd Wiz.AddSkeletons 4 Marksman
+expect Wiz: added 4 of 4 marksmen
+cmd Wiz.SpawnEnemies 3 Archer 650 150
+cmd Wiz.SpawnEnemies 1 Brute 230 -120
+wait 2.4
+shot bows_and_slam
+wait 0.6
+shot bows_and_slam_later
+cmd Wiz.Camera TopDown
+cmd Wiz.Goto 6000 -1900
+expect Wiz: wizard is at
+wait 2
+shot river_water

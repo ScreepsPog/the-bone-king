@@ -1,0 +1,69 @@
+# render 1280x720
+# The wizard walks over both bridges, three lanes each, both ways (direction of 2026-11-14 22:30 PST).
+cmd Wiz.Waves 0
+expect Wiz: waves are off
+cmd Wiz.God 1
+expect Wiz: god mode is on
+cmd Wiz.Goto 1575 -1500
+cmd Input.Press A 2.6
+wait 3.0
+cmd Wiz.State
+expectnum -3200 -2900 "y":
+cmd Wiz.Goto 1575 -3100
+cmd Input.Press D 2.6
+wait 3.0
+cmd Wiz.State
+expectnum -1700 -1400 "y":
+cmd Wiz.Goto 1725 -1500
+cmd Input.Press A 2.6
+wait 3.0
+cmd Wiz.State
+expectnum -3200 -2900 "y":
+cmd Wiz.Goto 1725 -3100
+cmd Input.Press D 2.6
+wait 3.0
+cmd Wiz.State
+expectnum -1700 -1400 "y":
+cmd Wiz.Goto 1875 -1500
+cmd Input.Press A 2.6
+wait 3.0
+cmd Wiz.State
+expectnum -3200 -2900 "y":
+cmd Wiz.Goto 1875 -3100
+cmd Input.Press D 2.6
+wait 3.0
+cmd Wiz.State
+expectnum -1700 -1400 "y":
+cmd Wiz.Goto 11075 -100
+cmd Input.Press A 2.8
+wait 3.2
+cmd Wiz.State
+expectnum -1900 -1600 "y":
+cmd Wiz.Goto 11075 -1600
+cmd Input.Press D 2.8
+wait 3.2
+cmd Wiz.State
+expectnum -50 200 "y":
+cmd Wiz.Goto 11175 -100
+cmd Input.Press A 2.8
+wait 3.2
+cmd Wiz.State
+expectnum -1900 -1600 "y":
+cmd Wiz.Goto 11175 -1600
+cmd Input.Press D 2.8
+wait 3.2
+cmd Wiz.State
+expectnum -50 200 "y":
+cmd Wiz.Goto 11275 -100
+cmd Input.Press A 2.8
+wait 3.2
+cmd Wiz.State
+expectnum -1900 -1600 "y":
+cmd Wiz.Goto 11275 -1600
+cmd Input.Press D 2.8
+wait 3.2
+cmd Wiz.State
+expectnum -50 200 "y":
+cmd Wiz.Goto 1725 -2326
+wait 0.5
+shot bridge_on_deck

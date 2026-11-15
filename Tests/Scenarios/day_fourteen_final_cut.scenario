@@ -1,0 +1,24 @@
+# render 1280x720
+cmd Wiz.Waves 0
+expect Wiz: waves are off
+cmd Wiz.God 1
+expect Wiz: god mode is on
+cmd Wiz.AddBones 30
+cmd Wiz.Summon
+wait 1
+cmd Wiz.TakeArea
+expect Wiz: the area is taken
+wait 1.5
+cmd Wiz.State
+expect "areaTaken":true
+shot gate_banner
+wait 4.5
+cmd Wiz.State
+expect "gate":"open"
+shot gate_arrow
+cmd Wiz.Goto gate
+expect Wiz: wizard is at
+wait 4.5
+cmd Wiz.State
+expect "gate":"entered"
+shot final_cut_screen

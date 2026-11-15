@@ -1,0 +1,32 @@
+# render 1280x720
+cmd Wiz.Map Practice
+expect Wiz: map is Practice
+cmd Wiz.Waves 0
+expect Wiz: waves are off
+cmd Wiz.God 1
+expect Wiz: god mode is on
+wait 2
+cmd Wiz.Perf Reset
+expect Wiz: perf reset
+wait 2
+cmd Wiz.Perf
+expect Wiz: perf
+cmd Wiz.Perf Reset
+cmd Wiz.AddSkeletons 30
+cmd Wiz.SpawnEnemies 60 Grunt 900 0
+wait 0.5
+cmd Wiz.Perf
+expect Wiz: perf
+cmd Wiz.Perf Reset
+wait 4
+cmd Wiz.Perf
+expect Wiz: perf
+cmd Wiz.Perf Reset
+cmd Wiz.SpawnEnemies 40 Grunt -900 0
+wait 0.5
+cmd Wiz.Perf
+expect Wiz: perf
+cmd Wiz.Perf Reset
+wait 4
+cmd Wiz.Perf
+expect Wiz: perf

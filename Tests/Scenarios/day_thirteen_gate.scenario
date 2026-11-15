@@ -1,0 +1,41 @@
+# render 1280x720
+cmd Wiz.Waves 0
+expect Wiz: waves are off
+cmd Wiz.God 1
+expect Wiz: god mode is on
+wait 1
+cmd Wiz.State
+expect "gate":"shut"
+cmd Wiz.AddBones 40
+cmd Wiz.Buy Spear
+cmd Wiz.AddSkeletons 12
+expect Wiz: added 12 of 12 skeletons
+cmd Wiz.AddSkeletons 3 Marksman
+expect Wiz: added 3 of 3 marksmen
+cmd Wiz.State
+expect "marksmen":3,
+cmd Wiz.State
+expect "spearUnlocked":true
+wait 0.5
+shot hud_bar
+cmd Wiz.Tune CommanderHealth 50000
+cmd Wiz.Tune CommanderSpearWindup 4
+cmd Wiz.Tune CommanderSpearLock 3
+cmd Wiz.Tune CommanderSpeed 0
+cmd Wiz.SpawnEnemies 1 Commander 600 0
+expect Wiz: spawned 1 of 1 commanders
+wait 2.5
+cmd Wiz.State
+expect "commanderNear":true
+shot hud_commander
+cmd Wiz.Goto gate
+expect Wiz: wizard is at
+wait 0.5
+cmd Wiz.State
+expect "gate":"shut"
+cmd Wiz.OpenGate
+expect Wiz: the kingdom gate is open
+wait 2
+cmd Wiz.State
+expect "gate":"entered"
+shot final_cut

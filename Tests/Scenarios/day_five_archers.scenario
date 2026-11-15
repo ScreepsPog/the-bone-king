@@ -1,0 +1,22 @@
+# render 1280x720
+cmd Wiz.Map Practice
+expect Wiz: map is Practice
+cmd Wiz.Waves 0
+expect Wiz: waves are off
+cmd Wiz.God 1
+expect Wiz: god mode is on
+wait 1
+cmd Wiz.Assassin
+expect Wiz: assassin not sent
+cmd Wiz.SpawnEnemies 3 Archer
+expect Wiz: spawned 3 of 3 archers
+wait 9
+cmd Wiz.State
+expectnum 1 400 "arrowHits":
+shot archers
+cmd Wiz.SpawnEnemies 2 Assassin
+expect Wiz: spawned 2 of 2 assassins
+wait 5
+shot assassins
+cmd Wiz.State
+expect "enemies":5,

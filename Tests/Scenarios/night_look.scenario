@@ -1,0 +1,18 @@
+# render 1280x720
+cmd Wiz.Waves 0
+expect Wiz: waves are off
+cmd Wiz.God 1
+expect Wiz: god mode is on
+cmd Wiz.AddSkeletons 12
+expect Wiz: added 12 of 12 skeletons
+wait 2
+shot night_start
+cmd Wiz.SpawnEnemies 6 Grunt 700 0
+wait 2
+shot night_fight
+cmd Wiz.Goto shrine
+wait 1.5
+shot night_shrine
+cmd Wiz.Goto gate
+wait 1.5
+shot night_gate

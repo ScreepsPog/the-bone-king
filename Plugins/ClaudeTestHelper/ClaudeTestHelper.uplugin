@@ -1,0 +1,26 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "Claude Test Helper",
+	"Description": "Commands for automated game tests driven by Claude Code (the unreal-toolkit Claude plugin): the Test.Scenario runner, real input (Input.Press, Input.Wheel, Input.Stick, Input.Keys, Input.Held, Input.Rebind), Anim.Freeze for pixel-stable screenshots, and Reader.Read to print a subsystem's state as JSON. Nothing of it is in shipping builds.",
+	"Category": "Testing",
+	"CreatedBy": "unreal-toolkit",
+	"CanContainContent": false,
+	"EnabledByDefault": true,
+	"IsBetaVersion": false,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "ClaudeTestHelper",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	],
+	"Plugins": [
+		{
+			"Name": "EnhancedInput",
+			"Enabled": true
+		}
+	]
+}

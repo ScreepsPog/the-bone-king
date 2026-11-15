@@ -1,0 +1,258 @@
+{
+	"FileVersion": 3,
+	"EngineAssociation": "5.9",
+	"Category": "",
+	"Description": "",
+	"Modules": [
+		{
+			"Name": "WebTesting",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	],
+	"Plugins": [
+		{
+			"Name": "ModelingToolsEditorMode",
+			"Enabled": true,
+			"TargetAllowList": [
+				"Editor"
+			]
+		},
+		{
+			"Name": "AIAssistant",
+			"Enabled": true,
+			"TargetAllowList": [
+				"Editor"
+			],
+			"PlatformDenyList": [
+				"Wasm"
+			]
+		},
+		{
+			"Name": "AllToolsets",
+			"Enabled": true,
+			"TargetAllowList": [
+				"Editor"
+			],
+			"PlatformDenyList": [
+				"Wasm"
+			]
+		},
+		{
+			"Name": "KnowledgeBaseToolset",
+			"Enabled": true,
+			"TargetAllowList": [
+				"Editor"
+			],
+			"PlatformDenyList": [
+				"Wasm"
+			]
+		},
+		{
+			"Name": "AgentCapability",
+			"Enabled": true,
+			"TargetAllowList": [
+				"Editor"
+			],
+			"PlatformDenyList": [
+				"Wasm"
+			]
+		},
+		{
+			"Name": "OnlineSubsystemUtils",
+			"Enabled": true,
+			"PlatformDenyList": [
+				"Wasm"
+			]
+		},
+		{
+			"Name": "OnlineSubsystemNull",
+			"Enabled": true,
+			"PlatformDenyList": [
+				"Wasm"
+			]
+		},
+		{
+			"Name": "Paper2D",
+			"Enabled": true,
+			"PlatformDenyList": [
+				"Wasm"
+			]
+		},
+		{
+			"Name": "ArchVisCharacter",
+			"Enabled": true,
+			"PlatformDenyList": [
+				"Wasm"
+			]
+		},
+		{
+			"Name": "CableComponent",
+			"Enabled": true,
+			"PlatformDenyList": [
+				"Wasm"
+			]
+		},
+		{
+			"Name": "CustomMeshComponent",
+			"Enabled": true,
+			"PlatformDenyList": [
+				"Wasm"
+			]
+		},
+		{
+			"Name": "AnimationSharing",
+			"Enabled": true,
+			"PlatformDenyList": [
+				"Wasm"
+			]
+		},
+		{
+			"Name": "ChaosCloth",
+			"Enabled": true,
+			"PlatformDenyList": [
+				"Wasm"
+			]
+		},
+		{
+			"Name": "ChaosNiagara",
+			"Enabled": true,
+			"PlatformDenyList": [
+				"Wasm"
+			]
+		},
+		{
+			"Name": "MutableAssetUserData",
+			"Enabled": true,
+			"PlatformDenyList": [
+				"Wasm"
+			]
+		},
+		{
+			"Name": "PCG",
+			"Enabled": true,
+			"PlatformDenyList": [
+				"Wasm"
+			]
+		},
+		{
+			"Name": "MediaPlate",
+			"Enabled": true,
+			"PlatformDenyList": [
+				"Wasm"
+			]
+		},
+		{
+			"Name": "MediaCompositing",
+			"Enabled": true,
+			"PlatformDenyList": [
+				"Wasm"
+			]
+		},
+		{
+			"Name": "DatasmithContent",
+			"Enabled": true,
+			"PlatformDenyList": [
+				"Wasm"
+			]
+		},
+		{
+			"Name": "VariantManagerContent",
+			"Enabled": true,
+			"PlatformDenyList": [
+				"Wasm"
+			]
+		},
+		{
+			"Name": "GameplayCameras",
+			"Enabled": true,
+			"PlatformDenyList": [
+				"Wasm"
+			]
+		},
+		{
+			"Name": "LocationServicesBPLibrary",
+			"Enabled": true,
+			"PlatformDenyList": [
+				"Wasm"
+			]
+		},
+		{
+			"Name": "MobilePatchingUtils",
+			"Enabled": true,
+			"PlatformDenyList": [
+				"Wasm"
+			]
+		},
+		{
+			"Name": "ChunkDownloader",
+			"Enabled": true,
+			"PlatformDenyList": [
+				"Wasm"
+			]
+		},
+		{
+			"Name": "AndroidPermission",
+			"Enabled": true,
+			"PlatformDenyList": [
+				"Wasm"
+			]
+		},
+		{
+			"Name": "AppleImageUtils",
+			"Enabled": true,
+			"PlatformDenyList": [
+				"Wasm"
+			]
+		},
+		{
+			"Name": "OnlineSubsystem",
+			"Enabled": true,
+			"PlatformDenyList": [
+				"Wasm"
+			]
+		},
+		{
+			"Name": "OnlineBase",
+			"Enabled": true,
+			"PlatformDenyList": [
+				"Wasm"
+			]
+		},
+		{
+			"Name": "ModelContextProtocol",
+			"Enabled": true,
+			"PlatformDenyList": [
+				"Wasm"
+			]
+		},
+		{
+			"Name": "CameraShakePreviewer",
+			"Enabled": true,
+			"PlatformDenyList": [
+				"Wasm"
+			]
+		},
+		{
+			"Name": "GLTFExporter",
+			"Enabled": true,
+			"PlatformDenyList": [
+				"Wasm"
+			]
+		},
+		{
+			"Name": "ChaosEditor",
+			"Enabled": true,
+			"PlatformDenyList": [
+				"Wasm"
+			]
+		},
+		{
+			"Name": "SlateDebugger",
+			"Enabled": true,
+			"PlatformDenyList": [
+				"Wasm"
+			]
+		}
+	]
+}

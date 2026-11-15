@@ -1,0 +1,43 @@
+# render 1280x720
+cmd Wiz.Map
+expect Wiz: map is Outskirts
+cmd Wiz.God 1
+expect Wiz: god mode is on
+cmd Wiz.Patrols 0
+expect Wiz: patrols are off
+cmd Wiz.State
+expect "areaTaken":false
+cmd Wiz.State
+expect "map":"Outskirts"
+cmd Wiz.MapScale
+expect Wiz: map scale is 15.0 units a pixel
+cmd Wiz.State
+expect "roadPatrols":4,
+wait 1
+shot outskirts_start
+cmd Wiz.Camera TopDown
+wait 1.5
+shot outskirts_top
+cmd Wiz.Camera Angled
+cmd Input.Press W 2.5
+wait 3.5
+shot outskirts_first_post
+cmd Wiz.Map Moon
+expect Wiz: unknown map
+cmd Wiz.Map Practice
+expect Wiz: map is Practice (0 pieces, 10 walls, 0 posts, 0 enemies at posts)
+cmd Wiz.Waves 0
+expect Wiz: waves are off
+cmd Wiz.Garrison 4 1 1500
+expect Wiz: post manned with 5 of 5 (5 at posts now)
+wait 1
+cmd Wiz.State
+expect "atPosts":5,
+cmd Wiz.Patrols now
+expect Wiz: patrol of 5 sent
+cmd Wiz.WakeAll
+expect Wiz: woke 5 enemies
+cmd Wiz.Commander 1500 2 0
+expect Wiz: commander placed (3 at posts now)
+cmd Wiz.State
+expect "timeScale":1.00,
